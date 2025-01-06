@@ -1,0 +1,17 @@
+[package]
+name = "rpc_load_balancer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = "0.1"
+pingora = { version = "0.4", features = ["lb"] }
+actix-web = "4"
+
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "lb"
+path = "src/lb.rs"
