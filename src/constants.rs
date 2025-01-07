@@ -1,7 +1,1 @@
-pub const RPC_URLS: [&str; 5] = [
-    "https://sepolia.drpc.org/",
-    "127.0.0.1:3001",
-    "127.0.0.1:3002",
-    "127.0.0.1:3003",
-    "127.0.0.1:3004",
-];
+pub const RPC_URLS: [&str; 1] = ["eth.drpc.org:443"];
