@@ -5,11 +5,6 @@ edition = "2021"
 
 [dependencies]
 async-trait = "0.1"
-<<<<<<< HEAD
+pingora = { version = "0.4", features = ["lb"] }
 log = "0.4"
 env_logger = "0.9"
-=======
-pingora = { version = "0.4", features = ["lb"] }
-actix-web = "4"
-tokio = { version = "1.42.0", features = ["full"] }
->>>>>>> parent of 74b37fe (#2 fix; add health check background service)

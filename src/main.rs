@@ -1,22 +1,14 @@
-<<<<<<< HEAD
-use constants::RPC_URLS;
 mod constants;
 mod lb;
 
-fn main() {
-    env_logger::init();
-=======
-mod lb;
-
+use constants::RPC_URLS;
 use lb::LB;
 use pingora::prelude::*;
 
 fn main() {
     let mut server = Server::new(None).unwrap();
 
-    let mut upstreams =
-        LoadBalancer::try_from_iter(["127.0.0.1:5678", "127.0.0.1:1234", "127.0.0.1:3333"])
-            .unwrap();
+    let mut upstreams = LoadBalancer::try_from_iter(RPC_URLS).unwrap();
 
     let hc = TcpHealthCheck::new();
     upstreams.set_health_check(hc);
@@ -30,7 +22,7 @@ fn main() {
     lb.add_tcp("0.0.0.0:8080");
 
     server.add_service(lb);
+    server.add_service(background);
     server.bootstrap();
     server.run_forever();
->>>>>>> parent of 74b37fe (#2 fix; add health check background service)
 }
