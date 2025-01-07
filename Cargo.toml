@@ -7,11 +7,4 @@ edition = "2021"
 async-trait = "0.1"
 pingora = { version = "0.4", features = ["lb"] }
 actix-web = "4"
-
-[[bin]]
-name = "server"
-path = "src/server.rs"
-
-[[bin]]
-name = "lb"
-path = "src/lb.rs"
+tokio = { version = "1.42.0", features = ["full"] }
