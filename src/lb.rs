@@ -19,7 +19,7 @@ impl ProxyHttp for LB {
         let peer = Box::new(HttpPeer::new(
             upstream,
             false,
-            "one.one.one.one".to_string(),
+            "sepolia.drpc.org".to_string(),
         ));
         Ok(peer)
     }
@@ -31,7 +31,7 @@ impl ProxyHttp for LB {
         _ctx: &mut Self::CTX,
     ) -> Result<()> {
         upstream_request
-            .insert_header("Host", "one.one.one.one")
+            .insert_header("Host", "sepolia.drpc.org")
             .unwrap();
         Ok(())
     }
